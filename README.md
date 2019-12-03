@@ -25,7 +25,7 @@ This repo creates an EC2 box (ubuntu 16.04.06 server), installs nginx and tests 
 1. create AMI using Packer and templateaws.json
    `packer build templateaws.json`
    
-1. update file .kitchen.yml with the image_id that has been created in the previous step and your Amazon key pair
+1. update file _.kitchen.yml_ with the image id that has been created in the previous step _(AMI ID)_ and your Amazon key pair (_.pem file_)
 
 1. install Chef on the instance, upload cookbook files and minimal configuration and start Chef run based on kitchen.yml file
    * `bundle exec kitchen converge`
