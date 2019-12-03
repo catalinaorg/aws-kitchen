@@ -1,0 +1,27 @@
+driver:
+  name: ec2
+  aws_ssh_key_id: mykeypair
+  region: us-west-2
+  associate_public_ip: true
+  
+provisioner:
+    name: chef_zero
+    product_name: chef
+    product_version: 14
+    install_strategy: always
+
+transport:
+    username: ubuntu
+
+platforms:
+  - name: ubuntu
+    driver:
+      image_id: ami-06efa7fc5047e176e
+    transport:  
+      ssh_key: mykeypair.pem
+      
+verifier:
+  name: inspec
+
+suites:
+  - name: default
